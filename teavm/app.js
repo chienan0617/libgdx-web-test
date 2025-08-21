@@ -31007,6 +31007,22 @@ jnci_UTF8Encoder_arrayEncode = ($this, $inArray, $inPos, $inSize, $outArray, $ou
     $controller.$outPosition0 = $outPos;
     return $result;
 },
+cbgm_MathUtils$Sin = $rt_classWithoutFields(),
+cbgm_MathUtils$Sin_table = null,
+cbgm_MathUtils$Sin__clinit_ = () => {
+    let $i, var$2;
+    cbgm_MathUtils$Sin_table = $rt_createFloatArray(16384);
+    $i = 0;
+    while ($i < 16384) {
+        cbgm_MathUtils$Sin_table.data[$i] = jl_Math_sin(($i + 0.5) / 16384.0 * 6.2831854820251465);
+        $i = $i + 1 | 0;
+    }
+    var$2 = cbgm_MathUtils$Sin_table.data;
+    var$2[0] = 0.0;
+    var$2[4096] = 1.0;
+    var$2[8192] = 0.0;
+    var$2[12288] = (-1.0);
+},
 dcgbu_InputUtil = $rt_classWithoutFields(dcgbu_Util),
 dcgbu_InputUtil_isTouched = () => {
     let var$1, var$2;
@@ -31027,22 +31043,6 @@ dcgbu_InputUtil_isTouched = () => {
 dcgbu_InputUtil_touchInRange = $range => {
     $range = $range.data;
     return cgxgbt_TeaInput_getX(cbg_Gdx_input) >= $range[0] && cgxgbt_TeaInput_getX(cbg_Gdx_input) <= $range[2] && cgxgbt_TeaInput_getY(cbg_Gdx_input) >= $range[1] && cgxgbt_TeaInput_getY(cbg_Gdx_input) <= $range[3] ? 1 : 0;
-},
-cbgm_MathUtils$Sin = $rt_classWithoutFields(),
-cbgm_MathUtils$Sin_table = null,
-cbgm_MathUtils$Sin__clinit_ = () => {
-    let $i, var$2;
-    cbgm_MathUtils$Sin_table = $rt_createFloatArray(16384);
-    $i = 0;
-    while ($i < 16384) {
-        cbgm_MathUtils$Sin_table.data[$i] = jl_Math_sin(($i + 0.5) / 16384.0 * 6.2831854820251465);
-        $i = $i + 1 | 0;
-    }
-    var$2 = cbgm_MathUtils$Sin_table.data;
-    var$2[0] = 0.0;
-    var$2[4096] = 1.0;
-    var$2[8192] = 0.0;
-    var$2[12288] = (-1.0);
 };
 function dcgccsf_ShapeType() {
     let a = this; jl_Enum.call(a);
@@ -34041,8 +34041,8 @@ jusi_SimpleStreamImpl$toArray$lambda$_21_0, 0, jl_Object, [juf_Predicate], 0, 3,
 cbggg_BitmapFontCache, 0, jl_Object, [], 0, 3, 0, 0, 0,
 jnci_BufferedEncoder, 0, jnc_CharsetEncoder, [], 1, 3, 0, 0, 0,
 jnci_UTF8Encoder, 0, jnci_BufferedEncoder, [], 0, 3, 0, 0, 0,
-dcgbu_InputUtil, 0, dcgbu_Util, [], 0, 3, 0, 0, 0,
 cbgm_MathUtils$Sin, 0, jl_Object, [], 0, 0, 0, 0, 0,
+dcgbu_InputUtil, 0, dcgbu_Util, [], 0, 3, 0, 0, 0,
 dcgccsf_ShapeType, 0, jl_Enum, [], 12, 3, 0, 0, 0,
 dcgccss_StateUtil, 0, jl_Object, [], 0, 3, 0, 0, 0]);
 $rt_metadata([cgxgbta_AssetLoadImpl$6, 0, jl_Object, [cgxgbta_AssetLoaderListener], 0, 0, 0, 0, ["$onProgress", $rt_wrapFunction2(cgxgbta_AssetLoadImpl$6_onProgress), "$onSuccess", $rt_wrapFunction2(cgxgbta_AssetLoadImpl$6_onSuccess)],
